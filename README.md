@@ -1,6 +1,6 @@
 # Baletta Deploy Action
 
-一个 GitHub Actions Custom Action，用于配合 [Baletta](https://github.com/your-org/baletta) API 触发 Docker Compose Stack 的部署。
+一个 GitHub Actions Custom Action，用于配合 [Baletta](https://github.com/ConstasJ/baletta) API 触发 Docker Compose Stack 的部署。
 
 ## 功能特性
 

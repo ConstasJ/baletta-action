@@ -17,7 +17,11 @@
     "deployment",
     "baletta"
   ],
-  "author": "Baletta Team",
+  "author": "ConstasJ <constasj@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baletta/baletta-action"
+  },
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^3.0.1",
