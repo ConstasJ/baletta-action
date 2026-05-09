@@ -164,7 +164,7 @@ async function waitForTaskCompletion(
   showLogs: boolean
 ): Promise<TaskCompletionResult> {
   return new Promise((resolve, reject) => {
-    const url = `${apiUrl}/tasks/${encodeURIComponent(taskId)}/events`;
+    const url = `${apiUrl}/tasks/${taskId}/events`;
     const startedAt = new Date().toISOString();
     let finishedAt: string | undefined;
     let exitCode: number | undefined;
