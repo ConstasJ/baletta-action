@@ -1,0 +1,35 @@
+{
+  "name": "baletta-deploy-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to trigger Docker Compose deployment via Baletta API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist --minify",
+    "build:dev": "ncc build src/index.ts -o dist",
+    "lint": "biome check src/",
+    "format": "biome format --write src/",
+    "test": "node --test dist/**/*.test.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "github-actions",
+    "docker-compose",
+    "deployment",
+    "baletta"
+  ],
+  "author": "Baletta Team",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1",
+    "eventsource": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@vercel/ncc": "^0.38.4",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

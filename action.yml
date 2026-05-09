@@ -1,0 +1,53 @@
+name: Baletta Deploy
+author: Baletta Team
+description: Trigger Docker Compose deployment via Baletta API
+branding:
+  icon: server
+  color: blue
+
+inputs:
+  api-url:
+    description: Baletta API URL (e.g., http://localhost:3000)
+    required: true
+  api-key:
+    description: Baletta API Key for authentication
+    required: true
+  project:
+    description: Project name configured in Baletta
+    required: true
+  wait-for-completion:
+    description: Wait for deployment to complete before exiting
+    required: false
+    default: 'true'
+  timeout:
+    description: Timeout in seconds when waiting for completion (0 = no timeout)
+    required: false
+    default: '300'
+  show-logs:
+    description: Show deployment logs in real-time via SSE
+    required: false
+    default: 'true'
+  retry-attempts:
+    description: Number of times to re-trigger the deployment when a task returns failure
+    required: false
+    default: '0'
+  retry-delay-seconds:
+    description: Delay between retry attempts in seconds
+    required: false
+    default: '5'
+
+outputs:
+  task-id:
+    description: Deployment task ID
+  status:
+    description: Final deployment status (success, failed, or unknown)
+  exit-code:
+    description: Deployment exit code
+  started-at:
+    description: Deployment start time (ISO 8601)
+  finished-at:
+    description: Deployment finish time (ISO 8601)
+
+runs:
+  using: node20
+  main: dist/index.js
